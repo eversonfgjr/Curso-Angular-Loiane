@@ -11,9 +11,24 @@ export class DataBindingComponent implements OnInit {
   url: string = 'http://loiane.com';
   urlImagem = 'http://lorempixel.com/400/200/nature/';
 
+  valorAtual:string  = '';
+  valorSalvo:string = '';
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  botaoClicado() {
+    alert('botao clicado');
+  }
+
+  onKeyUp(evento: KeyboardEvent) {
+    this.valorAtual = (<HTMLInputElement> evento.target).value; 
+  }
+
+  salvarValor(valor){
+    this.valorSalvo = valor;
   }
 
 }
